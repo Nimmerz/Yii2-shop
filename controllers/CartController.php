@@ -90,7 +90,7 @@ class CartController extends AppController{
             $order->sum = $session['cart.sum'];
             if($order->save()){
                 $this->saveOrderItems($session['cart'], $order->id);
-                Yii::$app->session->setFlash('success', 'Ваш заказ принят. Менеджер вскоре свяжется с Вами.');
+                Yii::$app->session->setFlash('success', 'Your order has entered, manager will call you');
                 Yii::$app->mailer->compose('order', ['session' => $session])
                     ->setFrom(['username@mail.ru' => 'yii2.loc'])
                     ->setTo($order->email)
@@ -101,7 +101,7 @@ class CartController extends AppController{
                 $session->remove('cart.sum');
                 return $this->refresh();
             }else{
-                Yii::$app->session->setFlash('error', 'Ошибка оформления заказа');
+                Yii::$app->session->setFlash('error', 'Error order');
             }
         }
         return $this->render('view', compact('session', 'order'));

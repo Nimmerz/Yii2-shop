@@ -61,6 +61,6 @@ use yii\widgets\ActiveForm;
         <?= Html::submitButton('Order ', ['class' => 'btn btn-success'])?>
         <?php ActiveForm::end()?>
     <?php else: ?>
-        <h3>Корзина пуста</h3>
+        <h3>Cart is empty</h3>
     <?php endif;?>
 </div>
