@@ -117,7 +117,6 @@ use yii\helpers\Html;
             </div>
 
 
-            <?php debug(Yii::$app->user->identity) ?>
 
             <div class="col-sm-9 padding-right">
                 <?php if (!empty($hits)): ?>
